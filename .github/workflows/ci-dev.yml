@@ -22,5 +22,5 @@ jobs:
       - uses: actions/upload-artifact@main
         with:
           name: mesdepenses-webapp-test
-          path: public/
+          path: build/
 
