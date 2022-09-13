@@ -17,7 +17,7 @@ env:
   #################################################
 
 jobs:
-  Download build:
+  Download-Build:
     runs-on: ubuntu-latest
     name: Deploy app container to Azure
     steps:
