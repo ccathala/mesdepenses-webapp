@@ -31,7 +31,7 @@ jobs:
 
   Build-Docker-Image:
     runs-on: ubuntu-latest
-    needs: build
+    needs: Download-Build
     name: Build image and store in GitHub Packages
     steps:
       - name: Checkout
