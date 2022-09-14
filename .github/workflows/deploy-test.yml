@@ -1,6 +1,6 @@
 name: 20 - Test deployment
 
-on: 
+on:
   push:
     branches:
       - test
@@ -17,11 +17,8 @@ env:
   #################################################
 
 jobs:
-
-  Download-Build-and-Build-Docker-Image:
+  Download-and-Build-Docker-Image:
     runs-on: ubuntu-latest
-    needs: Download-Build
-
     name: Deploy app container to Azure
     steps:
       - name: Checkout
@@ -39,11 +36,11 @@ jobs:
         uses: mattdavis0351/actions/docker-gpr@1.3.0
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
-          image-name: ${{env.DOCKER_IMAGE_NAME}}  
-          
+          image-name: ${{env.DOCKER_IMAGE_NAME}}
+
   Deploy-to-Azure:
     runs-on: ubuntu-latest
-    needs: Build-Docker-Image
+    needs: Download-and-Build-Docker-Image
     name: Deploy app container to Azure
     steps:
       - name: "Login via Azure CLI"
