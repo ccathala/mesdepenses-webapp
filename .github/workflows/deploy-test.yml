@@ -32,6 +32,12 @@ jobs:
           workflow_conclusion: success
           branch: dev
 
+      - name: Download built artifact
+        uses: actions/download-artifact@main
+        with:
+          name: webpack artifacts
+          path: build
+
       - name: Build image and store in GitHub Packages
         uses: mattdavis0351/actions/docker-gpr@1.3.0
         with:
