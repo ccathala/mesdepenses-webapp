@@ -31,6 +31,7 @@ jobs:
           workflow: ci-dev.yml
           workflow_conclusion: success
           branch: dev
+          path: build/
 
       - name: Download built artifact
         uses: actions/download-artifact@main
