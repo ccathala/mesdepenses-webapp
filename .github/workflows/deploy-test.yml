@@ -26,13 +26,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
-      - run: yarn install
-      - run: yarn build
+      - run: npm install
+      - run: npm build run
       - uses: actions/upload-artifact@main
         with:
           name: mesdepenses-webapp-test
-          path: build/
+          path: public/
 
   Build-Docker-Image:
     runs-on: ubuntu-latest
@@ -46,7 +45,7 @@ jobs:
         uses: actions/download-artifact@main
         with:
           name: mesdepenses-webapp-test
-          path: build
+          path: public
 
       - name: create image and store in Packages
         uses: mattdavis0351/actions/docker-gpr@1.3.0
