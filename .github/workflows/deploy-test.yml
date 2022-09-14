@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install
-      - run: npm build run
+      - run: npm run build
       - uses: actions/upload-artifact@main
         with:
           name: mesdepenses-webapp-test
