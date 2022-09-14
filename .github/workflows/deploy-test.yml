@@ -17,13 +17,10 @@ env:
   #################################################
 
 jobs:
-  build:
-    if: contains(github.event.pull_request.labels.*.name, 'stage')
-
+  Build:
     runs-on: ubuntu-latest
-
     steps:
-       - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Node version
         uses: actions/setup-node@v3
