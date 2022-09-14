@@ -35,7 +35,7 @@ jobs:
       - name: Download built artifact
         uses: actions/download-artifact@main
         with:
-          name: webpack artifacts
+          name: mesdepenses-webapp-test
           path: build
 
       - name: Build image and store in GitHub Packages
